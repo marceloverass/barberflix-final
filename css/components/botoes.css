@@ -1,0 +1,6 @@
+.botoes:hover {
+    background-color: #8DA9C4;
+    cursor: pointer;
+    color: #f4f6fb;  
+    border: 1px solid #8DA9C4;
+}

@@ -1,0 +1,37 @@
+.table {
+    background-color: #f4f6fb;
+    color: #000;
+    border-radius: 0 0 10px 10px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    overflow: hidden;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   
+}
+
+thead {
+    background-color: #212A3E;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #f1f6f9;
+    text-align: center;
+}
+
+thead:hover {
+    background-color: #212A3E;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: #8DA9C4;
+}
+
+.tabela-cad {
+    margin-top: 60px;
+}

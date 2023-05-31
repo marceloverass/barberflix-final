@@ -1,0 +1,44 @@
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.variation {
+    margin-top: 30px;
+}
+
+.margin {
+    margin-top: 20px;
+}
+
+.pagination > li > a 
+{
+    background-color: white;
+    color: #212A3E;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #212A3E !Important;
+    border: solid 1px #212A3E !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #212A3E !Important;
+    border: solid 1px #212A3E;
+}
