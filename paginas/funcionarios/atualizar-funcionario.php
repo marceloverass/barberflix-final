@@ -1,7 +1,3 @@
-<header>
-    <h3>Atualizar Funcionário</h3>
-</header>
-
 <?php
     $idFuncionario = $_POST['idFuncionario'];
     $nomeFuncionario = mysqli_real_escape_string($conexao, $_POST['nomeFuncionario']);
@@ -20,7 +16,21 @@
     WHERE idFuncionario = '{$idFuncionario}'
     ";
     
-    mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
+    $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
 
-    echo "Funcionário atualizado com sucesso!";
+    if ($rs) {
+        echo '<div class="alert alert-success margin" role="alert">
+                <h4 class="alert-heading">Feito!</h4>
+                <p>Funcionário atualizado com sucesso!</p>
+                <hr>
+                <a href="?menuop=funcionarios">Voltar</a>
+            </div>';
+    } else {
+        echo '<div class="alert alert-danger margin" role="alert">
+                <h4 class="alert-heading">Erro</h4>
+                <p>O funcionário não pode ser inserido.</p>
+                <hr>
+                <a href="?menuop=funcionarios">Voltar</a>
+            </div>';
+    }
 ?>

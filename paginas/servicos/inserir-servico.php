@@ -13,7 +13,7 @@
         if ($rs) {
             ?>                
             <div class="alert alert-success margin" role="alert">
-                <h4 class="alert-heading">Parabéns!!</h4>
+                <h4 class="alert-heading">Feito!</h4>
                 <p>Serviço inserido com sucesso!</p>
                 <hr>
                 <a href="?menuop=servicos">Voltar</a>

@@ -1,10 +1,10 @@
 <div class="margin">
     <form class="needs-validation" action="index.php?menuop=inserir-servico" method="POST" novalidate>
-        <div class="mb-3">
+        <div class="mb-3 col-3">
             <label for="tituloServico" class="form-label">Título</label>
             <input type="text" class="form-control" name="tituloServico" id="tituloServico" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 col-3">
             <label for="descricaoServico" class="form-label">Descrição</label>
             <textarea name="descricaoServico" class="form-control" cols="30" rows="5" required></textarea>
         </div>

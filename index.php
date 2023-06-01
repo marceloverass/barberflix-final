@@ -91,6 +91,12 @@
                 case 'inserir-servico':
                     include('paginas/servicos/inserir-servico.php');
                     break;
+                case 'editar-servico':
+                    include('paginas/servicos/editar-servico.php');
+                    break;
+                case 'atualizar-servico':
+                    include('paginas/servicos/atualizar-servico.php');
+                    break;
                 case 'agendamentos':
                     include('paginas/agendamentos/agendamentos.php');
                     break;
