@@ -1,5 +1,27 @@
 <?php
     include('db/conexao.php');
+    session_start();
+
+    if (isset($_SESSION['loginUser']) && isset($_SESSION['senhaUser'])) {
+        $loginUser = $_SESSION['loginUser'];
+        $senhaUser = $_SESSION['senhaUser'];
+        $nomeUser = $_SESSION['nomeUser'];
+
+        $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
+        $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
+        $dados = mysqli_fetch_assoc($rs);
+        $linha = mysqli_num_rows($rs);
+
+        if ($linha == 0) {
+            session_unset();
+            session_destroy();
+            header("Location: login.php");
+            exit();
+        } 
+        
+    } else {
+        header("Location: login.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +53,10 @@
                     <li class="nav-item"><a class="nav-link" href="index.php?menuop=clientes">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php?menuop=funcionarios">Funcionários</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php?menuop=servicos">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.php?menuop=agendamentos">Agendamentos</a></li>
-                    </ul>
+                    <li class="nav-item"><a class="nav-link" href="index.php?menuop=agendamentos">Agendamentos</a></li>
+                    <li class="nav-item"><a href="logout.php" class="nav-link"> Sair</a></li>
+ 
+                </ul>
             </div>
             <nav> 
         </div>

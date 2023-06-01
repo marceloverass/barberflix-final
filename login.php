@@ -1,3 +1,33 @@
+<?php
+    //connection db
+    include "./db/conexao.php";
+    // verify if the user is logged
+
+    $msg_error = "";
+
+    if( isset($_POST["loginUser"]) && isset($_POST["senhaUser"])) {
+        $loginUser = mysqli_real_escape_string($conexao, $_POST["loginUser"]);
+        $senhaUser = mysqli_real_escape_string($conexao, $_POST["senhaUser"]);
+        
+        $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
+        $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
+        $dados = mysqli_fetch_assoc($rs);
+        $linha = mysqli_num_rows($rs);
+
+        if ($linha != 0) {
+            session_start();
+            $_SESSION['loginUser'] = $loginUser;
+            $_SESSION['senhaUser'] = $senhaUser;
+            $_SESSION['nomeUser'] = $dados['nomeUser'];
+            header("Location: index.php");
+        } else {
+            $msg_error = "<div class='alert alert-danger' role='alert'>
+                                <p>Usuário ou senha inválidos!</p>
+                          </div>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +48,7 @@
                 <div class="row justify-content-center mb-4">
                     <img src="./img/logo-side-black.png" alt="Barberflix Logo">
                 </div>
-                <form class="needs-validation" action="index.php" method="POST" novalidate>
+                <form class="needs-validation" action="login.php" method="POST" novalidate>
                     <div class="form-group mb-4">
                         <label class="form-label" for="loginUser">Login</label>
                         <div class="input-group">
@@ -33,7 +63,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label class="form-label" for="senhaUser">Senha</label>
-                        <div class="input-group mb-5">
+                        <div class="input-group mb-4">
                             <span class="input-group-text">
                                 <i class="bi bi-key-fill"></i>
                             </span>
@@ -42,6 +72,9 @@
                                 Informe a senha.
                             </div>
                         </div>
+                        <?php 
+                                echo $msg_error; 
+                        ?>
                     <button class="btn btn-outline-secondary botoes w-100">Entrar</button>
                 </form>
             </div>
