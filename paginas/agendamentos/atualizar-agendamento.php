@@ -1,6 +1,8 @@
 
 <?php
     $idAgendamento = $_POST['idAgendamento'];
+    $clienteAgendamento = mysqli_real_escape_string($conexao, $_POST['clienteAgendamento']);
+    $barbeiroAgendamento = mysqli_real_escape_string($conexao, $_POST['barbeiroAgendamento']);
     $tituloAgendamento = mysqli_real_escape_string($conexao, $_POST['tituloAgendamento']);
     $descricaoAgendamento = mysqli_real_escape_string($conexao, $_POST['descricaoAgendamento']);
     $dataAgendamento = mysqli_real_escape_string($conexao, $_POST['dataAgendamento']);

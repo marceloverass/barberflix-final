@@ -24,12 +24,12 @@
         <thead>
             <tr>
                 <th>Status</th>
-                <th>Título</th>
                 <th>Cliente</th>
                 <th>Barbeiro</th>
+                <th>Título</th>
                 <th>Descrição</th>
-                <th>Data</th>
-                <th>Hora</th>
+                <th>Data Agendada</th>
+                <th>Hora Agendada</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>
@@ -44,16 +44,19 @@
                 $sql = "SELECT
                 idAgendamento,
                 statusAgendamento,
+                upper(clienteAgendamento) AS clienteAgendamento,
+                upper(barbeiroAgendamento) AS barbeiroAgendamento,
                 tituloAgendamento,
-                clienteAgendamento,
-                barbeiroAgendamento
                 descricaoAgendamento,
                 DATE_FORMAT(dataAgendamento, '%d/%m/%Y') AS dataAgendamento,
                 horaAgendamento
                 FROM agendamentos
                 WHERE tituloAgendamento LIKE '%{$txt_pesquisa}%' OR 
-                DATE_FORMAT(dataAgendamento, '%d/%m/%Y') LIKE '%{$txt_pesquisa}%'
-                ORDER BY statusAgendamento ASC, DATE_FORMAT(dataAgendamento, '%d/%m/%Y') DESC, horaAgendamento DESC
+                barbeiroAgendamento LIKE '%{$txt_pesquisa}%' OR
+                DATE_FORMAT(dataAgendamento, '%d/%m/%Y') LIKE '%{$txt_pesquisa}%' OR
+                horaAgendamento LIKE '%{$txt_pesquisa}%' OR
+                descricaoAgendamento LIKE '%{$txt_pesquisa}%'
+                ORDER BY statusAgendamento ASC, dataAgendamento ASC, horaAgendamento ASC
                 LIMIT {$inicio}, {$quantidade}
                 ";
                     $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
@@ -71,6 +74,8 @@
                         ?>
                     </a>
                 </td>
+                <td class="text-center"><?=$dados["clienteAgendamento"] ?></td>
+                <td class="text-center"><?=$dados["barbeiroAgendamento"] ?></td>
                 <td class="text-center"><?=$dados["tituloAgendamento"] ?></td>
                 <td class="text-center"><?=$dados["descricaoAgendamento"] ?></td>
                 <td class="text-center"><?=$dados["dataAgendamento"] ?></td>

@@ -13,6 +13,18 @@
             <input type="text" class="form-control text-center" name="idAgendamento" id="idAgendamento" value="<?=$dados["idAgendamento"]?>" required readonly>
         </div>
         <div class="mb-3 col-3">
+            <label for="clienteAgendamento" class="form-label">Cliente</label>
+            <input type="text" class="form-control" name="clienteAgendamento" id="clienteAgendamento" value="<?=$dados["clienteAgendamento"]?>" required>
+            <div class="valid-feedback">OK!</div>
+            <div class="invalid-feedback">Campo obrigatório</div>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="barbeiroAgendamento" class="form-label">Barbeiro</label>
+            <input type="text" class="form-control" name="barbeiroAgendamento" id="barbeiroAgendamento" value="<?=$dados["barbeiroAgendamento"]?>" required>
+            <div class="valid-feedback">OK!</div>
+            <div class="invalid-feedback">Campo obrigatório</div>
+        </div>
+        <div class="mb-3 col-3">
             <label for="tituloAgendamento" class="form-label">Título</label>
             <input type="text" class="form-control" name="tituloAgendamento" id="tituloAgendamento" value="<?=$dados["tituloAgendamento"]?>" required>
             <div class="valid-feedback">OK!</div>

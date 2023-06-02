@@ -1,10 +1,12 @@
 <?php
+        $clienteAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['clienteAgendamento']));
+        $barbeiroAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['barbeiroAgendamento']));
         $tituloAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['tituloAgendamento']));
         $descricaoAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['descricaoAgendamento']));
         $dataAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['dataAgendamento']));
         $horaAgendamento = strip_tags( mysqli_real_escape_string($conexao, $_POST['horaAgendamento']));
 
-        $sql = "INSERT INTO agendamentos (tituloAgendamento, descricaoAgendamento, dataAgendamento, horaAgendamento) VALUES ('$tituloAgendamento', '$descricaoAgendamento', '$dataAgendamento', '$horaAgendamento')";
+        $sql = "INSERT INTO agendamentos (clienteAgendamento, barbeiroAgendamento, tituloAgendamento, descricaoAgendamento, dataAgendamento, horaAgendamento) VALUES ('$clienteAgendamento','$barbeiroAgendamento','$tituloAgendamento', '$descricaoAgendamento', '$dataAgendamento', '$horaAgendamento')";
         $rs = mysqli_query($conexao, $sql);
 
         if ($rs) {

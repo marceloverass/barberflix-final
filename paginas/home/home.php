@@ -11,7 +11,16 @@
         <div class="row vh-100 align-items mt-2 justify-content-center">
             <div class="col-10 col-sm-8 col-md-6 col-lg-4 p-4">
                 <div class="row justify-content mb-4">
-                    <img style="margin-top: 120px" src="./img/logo-circle.png" alt="Barberflix Logo">
+                <div class="flip-box">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+      <img style="margin-top: 120px" src="./img/logo-circle.png" alt="Barberflix Logo">
+      </div>
+      <div class="flip-box-back">
+        <img style="margin-top: 120px" src="./img/logo-circle.png" alt="Barberflix Logo">
+      </div>
+    </div>
+  </div>
                 </div>
             </div>
         </div>

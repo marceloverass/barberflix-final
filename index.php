@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="css/components/clientes.css">
     <link rel="stylesheet" href="css/components/botoes.css">
     <link rel="stylesheet" href="css/components/container.css">
-    <link rel="stylesheet" href="css/components/img.css">
+    <link rel="stylesheet" href="css/components/flip-img.css">
 </head>
 <body>
     <header class="header fixed-top">
