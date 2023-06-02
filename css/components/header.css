@@ -1,5 +1,6 @@
 .header {
-    background-color: #212A3E;
+    background-color: #f1f6f9;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px;
 }
 
 .logo-header {
@@ -16,21 +17,22 @@
 }
 
 .nav-item {
-    background-color: #fff;
+    background-color: #f1f6f9;;
 }
 
 .nav-link {
-    color: #F1F6F9;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #212A3E;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-weight: 900;
-    color: #f1f6f9;
     text-align: center;
+    color: #212A3E;
 }
 
 .nav-link:hover {
+    color: #8da9c4;
+}
+
+.nav-link:active {
     color: #8da9c4;
 }

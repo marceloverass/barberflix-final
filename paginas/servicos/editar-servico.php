@@ -30,28 +30,6 @@
                 <input type="time" class="form-control" name="horaConclusaoServico" id="horaConclusaoServico" value="<?=$dados["horaConclusaoServico"]?>" required>
             </div>
         </div>
-        <div class="row">
-            <div class="mb-3 col-3">
-                <label for="dataLembreteServico" class="form-label">Data de Lembrete</label>
-                <input type="date" class="form-control" name="dataLembreteServico" id="dataLembreteServico" value="<?=$dados["dataLembreteServico"]?>">
-            </div>
-            <div class="mb-3 col-3">
-                <label for="horaLembreteServico" class="form-label">Hora de Lembrete</label>
-                <input type="time" class="form-control" name="horaLembreteServico" id="horaLembreteServico" value="<?=$dados["horaLembreteServico"]?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mb-3 col-3">
-            <label for="recorrenciaServico" class="form-label">Recorrência</label>
-                <select name="recorrenciaServico" id="recorrenciaServico" class="form-select">
-                    <option value="0" <?php echo ($dados["recorrenciaServico"] = 0 ) ? "selected": "" ?>>Não Recorrente</option>
-                    <option value="1" <?php echo ($dados["recorrenciaServico"] = 1 ) ? "selected": "" ?>>Diariamente</option>
-                    <option value="2" <?php echo ($dados["recorrenciaServico"] = 2 ) ? "selected": "" ?>>Semanalmente</option>
-                    <option value="3" <?php echo ($dados["recorrenciaServico"] = 3 ) ? "selected": "" ?>>Mensalmente</option>
-                    <option value="4" <?php echo ($dados["recorrenciaServico"] = 4 ) ? "selected": "" ?>>Anualmente</option>
-                </select>
-            </div>
-        </div>
         <div class="mb-3">
             <input class="btn btn-outline-secondary botoes variation" type="submit" value="Atualizar" name="btnAtualizar">
         </div>

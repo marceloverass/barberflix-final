@@ -40,12 +40,14 @@
     <link rel="stylesheet" href="css/components/table.css">
     <link rel="stylesheet" href="css/components/clientes.css">
     <link rel="stylesheet" href="css/components/botoes.css">
+    <link rel="stylesheet" href="css/components/container.css">
+    <link rel="stylesheet" href="css/components/img.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
-                <a href="index.php?menuop=home"><img class="logo-header" src="img/logo-side-white.png" alt="Logo BarberFlix" width="190px"></a>
+                <a href="index.php?menuop=home"><img class="logo-header" src="img/logo-side-black.png" alt="Logo BarberFlix" width="190px"></a>
 
             <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="navbar-nav mr-auto">
@@ -62,7 +64,7 @@
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container variation1">
         <?php
             $menuop = (isset($_GET['menuop'])) ? $_GET['menuop'] : 'home';
             switch($menuop) {
@@ -126,6 +128,21 @@
                 case 'agendamentos':
                     include('paginas/agendamentos/agendamentos.php');
                     break;
+                case 'cad-agendamento':
+                    include('paginas/agendamentos/cad-agendamento.php');
+                    break;
+                case 'inserir-agendamento':
+                    include('paginas/agendamentos/inserir-agendamento.php');
+                    break;
+                case 'editar-agendamento':
+                    include('paginas/agendamentos/editar-agendamento.php');
+                    break;
+                case 'atualizar-agendamento':
+                    include('paginas/agendamentos/atualizar-agendamento.php');
+                    break;
+                case 'excluir-agendamento':
+                    include('paginas/agendamentos/excluir-agendamento.php');
+                    break;
                 default:
                     include('paginas/home/home.php');
                     break;
@@ -133,10 +150,6 @@
         ?>
     </div>
     </main>
-
-    <footer class="container-fluid fixed-bottom footer">
-        <div class="text-center">Barberflix &#169; 2023</div>
-    </footer>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

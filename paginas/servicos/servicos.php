@@ -23,11 +23,11 @@
     <table class="table table-bordered table-sm">
         <thead>
             <tr>
-                <th>Status</th>
+                <th>Pagamento</th>
                 <th>Título</th>
                 <th>Descrição</th>
-                <th>Data</th>
-                <th>Hora</th>
+                <th>Data Conclusão</th>
+                <th>Hora Conclusão</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>

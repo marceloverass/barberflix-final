@@ -3,11 +3,8 @@
         $descricaoServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['descricaoServico']));
         $dataConclusaoServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['dataConclusaoServico']));
         $horaConclusaoServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['horaConclusaoServico']));
-        $dataLembreteServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['dataLembreteServico']));
-        $horaLembreteServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['horaLembreteServico']));
-        $recorrenciaServico = strip_tags( mysqli_real_escape_string($conexao, $_POST['recorrenciaServico']));
 
-        $sql = "INSERT INTO servicos (tituloServico, descricaoServico, dataConclusaoServico, horaConclusaoServico, dataLembreteServico, horaLembreteServico, recorrenciaServico) VALUES ('$tituloServico', '$descricaoServico', '$dataConclusaoServico', '$horaConclusaoServico', '$dataLembreteServico', '$horaLembreteServico', '$recorrenciaServico')";
+        $sql = "INSERT INTO servicos (tituloServico, descricaoServico, dataConclusaoServico, horaConclusaoServico) VALUES ('$tituloServico', '$descricaoServico', '$dataConclusaoServico', '$horaConclusaoServico')";
         $rs = mysqli_query($conexao, $sql);
 
         if ($rs) {

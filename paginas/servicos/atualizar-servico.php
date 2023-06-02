@@ -5,17 +5,12 @@
     $descricaoServico = mysqli_real_escape_string($conexao, $_POST['descricaoServico']);
     $dataConclusaoServico = mysqli_real_escape_string($conexao, $_POST['dataConclusaoServico']);
     $horaConclusaoServico = mysqli_real_escape_string($conexao, $_POST['horaConclusaoServico']);
-    $dataLembreteServico = mysqli_real_escape_string($conexao, $_POST['dataLembreteServico']);
-    $horaLembreteServico = mysqli_real_escape_string($conexao, $_POST['horaLembreteServico']);
-    $recorrenciaServico = mysqli_real_escape_string($conexao, $_POST['recorrenciaServico']);
+
     $sql = "UPDATE servicos SET
     tituloServico = '{$tituloServico}',
     descricaoServico = '{$descricaoServico}',
     dataConclusaoServico = '{$dataConclusaoServico}',
-    horaConclusaoServico = '{$horaConclusaoServico}',
-    dataLembreteServico = '{$dataLembreteServico}',
-    horaLembreteServico = '{$horaLembreteServico}',
-    recorrenciaServico = '{$recorrenciaServico}'
+    horaConclusaoServico = '{$horaConclusaoServico}'
     WHERE idServico = '{$idServico}'
     ";
     
