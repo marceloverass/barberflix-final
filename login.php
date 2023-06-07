@@ -1,7 +1,5 @@
 <?php
-    //connection db
     include "./db/conexao.php";
-    // verify if the user is logged
 
     $msg_error = "";
 
@@ -11,7 +9,6 @@
         
         $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
         $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
-        $dados = mysqli_fetch_assoc($rs);
         $linha = mysqli_num_rows($rs);
 
         if ($linha != 0) {

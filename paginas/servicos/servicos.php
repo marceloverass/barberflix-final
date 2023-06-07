@@ -24,6 +24,8 @@
         <thead>
             <tr>
                 <th>Pagamento</th>
+                <th>Cliente</th>
+                <th>Barbeiro</th>
                 <th>Título</th>
                 <th>Descrição</th>
                 <th>Data Conclusão</th>
@@ -42,12 +44,17 @@
                 $sql = "SELECT
                 idServico,
                 statusServico,
+                clienteServico,
+                barbeiroServico,
                 tituloServico,
                 descricaoServico,
                 DATE_FORMAT(dataConclusaoServico, '%d/%m/%Y') AS dataConclusaoServico,
                 horaConclusaoServico
                 FROM servicos
-                WHERE tituloServico LIKE '%{$txt_pesquisa}%' OR 
+                WHERE tituloServico LIKE '%{$txt_pesquisa}%' OR
+                descricaoServico LIKE '%{$txt_pesquisa}%' OR
+                clienteServico LIKE '%{$txt_pesquisa}%' OR
+                barbeiroServico LIKE '%{$txt_pesquisa}%' OR 
                 DATE_FORMAT(dataConclusaoServico, '%d/%m/%Y') LIKE '%{$txt_pesquisa}%'
                 ORDER BY statusServico ASC, DATE_FORMAT(dataConclusaoServico, '%d/%m/%Y') DESC, horaConclusaoServico DESC
                 LIMIT {$inicio}, {$quantidade}
@@ -67,6 +74,8 @@
                         ?>
                     </a>
                 </td>
+                <td class="text-center"><?=$dados["clienteServico"] ?></td>
+                <td class="text-center"><?=$dados["barbeiroServico"] ?></td>
                 <td class="text-center"><?=$dados["tituloServico"] ?></td>
                 <td class="text-center"><?=$dados["descricaoServico"] ?></td>
                 <td class="text-center"><?=$dados["dataConclusaoServico"] ?></td>

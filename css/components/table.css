@@ -11,7 +11,7 @@
 }
 
 thead {
-    background-color: #212A3E;
+    background-color: #202124;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -20,7 +20,7 @@ thead {
 }
 
 thead:hover {
-    background-color: #212A3E;
+    background-color: #202124;
 }
 
 td {
@@ -29,7 +29,8 @@ td {
 
 tr:hover {
     cursor: pointer;
-    background-color: #8DA9C4;
+    background-color: #202124;
+    color: #fff;
 }
 
 .tabela-cad {

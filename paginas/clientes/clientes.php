@@ -35,7 +35,6 @@
                 $pagina = (isset($_GET["pagina"])) ? $_GET["pagina"] : 1;
                 $inicio = ($quantidade * $pagina) - $quantidade;
 
-
                 $sql = "SELECT
                 idCliente,
                 upper(nomeCliente) AS nomeCliente,
@@ -102,7 +101,7 @@
     for ($i=1; $i <= $totalPagina; $i++) { 
         if($i >= ($pagina-5) && $i <= ($pagina+5)) {
             if ($i == $pagina) {
-                echo "<li class='page-item active'><a class='page-link' href='#'>$i </a></li>";
+                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
             } else {
                 echo "<li class='page-item'><a class='page-link' href='?menuop=clientes&pagina=$i'>$i</a> </li> ";
             }

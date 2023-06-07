@@ -20,7 +20,7 @@
 
    if ($rs) {
     echo '<div class="alert alert-success margin" role="alert">
-            <h4 class="alert-heading">Feito!h4>
+            <h4 class="alert-heading">Feito! </h4>
             <p>Cliente atualizado com sucesso!</p>
             <hr>
             <a href="?menuop=clientes">Voltar</a>

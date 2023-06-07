@@ -1,12 +1,16 @@
 
 <?php
     $idServico = $_POST['idServico'];
+    $clienteServico = mysqli_real_escape_string($conexao, $_POST['clienteServico']);
+    $barbeiroServico = mysqli_real_escape_string($conexao, $_POST['barbeiroServico']);
     $tituloServico = mysqli_real_escape_string($conexao, $_POST['tituloServico']);
     $descricaoServico = mysqli_real_escape_string($conexao, $_POST['descricaoServico']);
     $dataConclusaoServico = mysqli_real_escape_string($conexao, $_POST['dataConclusaoServico']);
     $horaConclusaoServico = mysqli_real_escape_string($conexao, $_POST['horaConclusaoServico']);
 
     $sql = "UPDATE servicos SET
+    clienteServico = '{$clienteServico}',
+    barbeiroServico = '{$barbeiroServico}',
     tituloServico = '{$tituloServico}',
     descricaoServico = '{$descricaoServico}',
     dataConclusaoServico = '{$dataConclusaoServico}',

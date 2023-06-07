@@ -1,6 +1,14 @@
 <div class="margin">
     <form class="needs-validation" action="index.php?menuop=inserir-servico" method="POST" novalidate>
         <div class="mb-3 col-3">
+            <label for="clienteServico" class="form-label">Cliente</label>
+            <input type="text" class="form-control" name="clienteServico" id="clienteServico" required>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="barbeiroServico" class="form-label">Barbeiro</label>
+            <input type="text" class="form-control" name="barbeiroServico" id="barbeiroServico" required>
+        </div>
+        <div class="mb-3 col-3">
             <label for="tituloServico" class="form-label">Título</label>
             <input type="text" class="form-control" name="tituloServico" id="tituloServico" required>
         </div>

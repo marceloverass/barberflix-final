@@ -26,13 +26,10 @@
     letter-spacing: 0.1rem;
     font-weight: 900;
     text-align: center;
-    color: #212A3E;
+    color: #202124;
+    transition: 0.3s;
 }
 
 .nav-link:hover {
-    color: #8da9c4;
-}
-
-.nav-link:active {
-    color: #8da9c4;
+    opacity: 0.5;
 }

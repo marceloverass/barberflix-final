@@ -1,6 +1,14 @@
 .botoes:hover {
-    background-color: #8DA9C4;
+    background-color: #202124;
     cursor: pointer;
     color: #f4f6fb;  
-    border: 1px solid #8DA9C4;
+    border: 1px solid #202124;
+}
+
+.variation {
+    margin-top: 30px;
+}
+
+.variation1 {
+    margin-top: 150px;
 }

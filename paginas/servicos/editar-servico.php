@@ -13,6 +13,14 @@
             <input type="text" class="form-control text-center" name="idServico" id="idServico" value="<?=$dados["idServico"]?>" required readonly>
         </div>
         <div class="mb-3 col-3">
+            <label for="clienteServico" class="form-label">Cliente</label>
+            <input type="text" class="form-control" name="clienteServico" id="clienteServico" value="<?=$dados["clienteServico"]?>" required>
+        </div>
+        <div class="mb-3 col-3">
+            <label for="barbeiroServico" class="form-label">Barbeiro</label>
+            <input type="text" class="form-control" name="barbeiroServico" id="barbeiroServico" value="<?=$dados["barbeiroServico"]?>" required>
+        </div>
+        <div class="mb-3 col-3">
             <label for="tituloServico" class="form-label">Título</label>
             <input type="text" class="form-control" name="tituloServico" id="tituloServico" value="<?=$dados["tituloServico"]?>" required>
         </div>

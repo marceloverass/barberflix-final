@@ -9,7 +9,6 @@
 
         $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
         $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
-        $dados = mysqli_fetch_assoc($rs);
         $linha = mysqli_num_rows($rs);
 
         if ($linha == 0) {
@@ -36,12 +35,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="css/pattern.css">
     <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/components/table.css">
     <link rel="stylesheet" href="css/components/clientes.css">
     <link rel="stylesheet" href="css/components/botoes.css">
     <link rel="stylesheet" href="css/components/container.css">
     <link rel="stylesheet" href="css/components/flip-img.css">
+    <link rel="stylesheet" href="css/components/pagination.css">
 </head>
 <body>
     <header class="header fixed-top">
@@ -49,15 +48,14 @@
             <nav class="navbar navbar-expand-lg">
                 <a href="index.php?menuop=home"><img class="logo-header" src="img/logo-side-black.png" alt="Logo BarberFlix" width="190px"></a>
 
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link"href="index.php?menuop=home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?menuop=clientes">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?menuop=funcionarios">Funcionários</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?menuop=servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?menuop=agendamentos">Agendamentos</a></li>
-                    <li class="nav-item"><a href="logout.php" class="nav-link"> Sair</a></li>
- 
+                        <li class="nav-item"><a class="nav-link active"href="index.php?menuop=home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?menuop=clientes">Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?menuop=funcionarios">Funcionários</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?menuop=servicos">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?menuop=agendamentos">Agendamentos</a></li>
+                        <li class="nav-item"><a href="logout.php" class="nav-link"> Sair</a></li>
                 </ul>
             </div>
             <nav> 
@@ -93,20 +91,20 @@
                     include('paginas/funcionarios/funcionarios.php');
                     break;
                 case 'cad-funcionario':
-                        include('paginas/funcionarios/cad-funcionario.php');
-                        break;
+                    include('paginas/funcionarios/cad-funcionario.php');
+                    break;
                 case 'inserir-funcionario':
-                        include('paginas/funcionarios/inserir-funcionario.php');
-                        break;
+                    include('paginas/funcionarios/inserir-funcionario.php');
+                    break;
                 case 'editar-funcionario':
-                        include('paginas/funcionarios/editar-funcionario.php');
-                        break;
+                    include('paginas/funcionarios/editar-funcionario.php');
+                    break;
                 case 'atualizar-funcionario':
-                        include('paginas/funcionarios/atualizar-funcionario.php');
-                        break;
+                    include('paginas/funcionarios/atualizar-funcionario.php');
+                    break;
                 case 'excluir-funcionario':
-                        include('paginas/funcionarios/excluir-funcionario.php');
-                        break;
+                    include('paginas/funcionarios/excluir-funcionario.php');
+                    break;
                 case 'servicos':
                     include('paginas/servicos/servicos.php');
                     break;
@@ -155,5 +153,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./js/validation.js"></script>
+    <script src="./js/nav-link.js"></script>
 </body>
 </html>
