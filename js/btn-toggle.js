@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 const toggleBtn = document.querySelector('.toggle_btn');
         const toggleBtnIcon = document.querySelector('.toggle_btn i');

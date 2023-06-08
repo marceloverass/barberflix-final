@@ -19,7 +19,7 @@
         </div>
     </form>
 </div>
-<div class="tabela">
+<div style="overflow-x:auto;" class="tabela">
     <table class="table table-bordered table-sm">
         <thead>
             <tr>
@@ -30,6 +30,7 @@
                 <th>Descrição</th>
                 <th>Data Agendada</th>
                 <th>Hora Agendada</th>
+                <th>Relatório</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>
@@ -80,6 +81,7 @@
                 <td class="text-center"><?=$dados["descricaoAgendamento"] ?></td>
                 <td class="text-center"><?=$dados["dataAgendamento"] ?></td>
                 <td class="text-center"><?=$dados["horaAgendamento"] ?></td>
+                <td class="text-center"><a class="btn btn-outline-secondary btn-sm" href="gerar_relatorio.php?idAgendamento=<?=$dados['idAgendamento']?>">Baixar Relatório</a></td>
                 <td class="text-center"><a class="btn btn-outline-secondary btn-sm" href="index.php?menuop=editar-agendamento&idAgendamento=<?=$dados["idAgendamento"] ?>"><i class="bi bi-pencil-square"></i></a></td>
                 <td class="text-center"><a class="btn btn-outline-danger btn-sm" href="index.php?menuop=excluir-agendamento&idAgendamento=<?=$dados["idAgendamento"] ?>"><i class="bi bi-trash-fill"></i></a></td>
             </tr>
@@ -125,3 +127,4 @@
     echo ' <li class="page-item"> <a class="page-link" href="index.php?menuop=agendamentos&pagina='.$totalPagina.'">Última</a> </li>';
 ?>
 </ul>
+

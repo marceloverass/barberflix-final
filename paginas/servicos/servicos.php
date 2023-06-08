@@ -19,7 +19,7 @@
         </div>
     </form>
 </div>
-<div class="tabela">
+<div style="overflow-x:auto;" class="tabela">
     <table class="table table-bordered table-sm">
         <thead>
             <tr>

@@ -13,7 +13,7 @@
         </div>
     </form>
 </div>
-<div class="tabela">
+<div style="overflow-x:auto;" class="tabela">
     <table class="table table-bordered table-sm">
         <thead>
             <tr>
@@ -83,37 +83,41 @@
 </div>
 
 <ul class="pagination justify-content-center">
+  <?php
+  $sqlTotal = "SELECT idCliente FROM clientes";
+  $qrTotal = mysqli_query($conexao, $sqlTotal) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
+  $numTotal = mysqli_num_rows($qrTotal);
+  $totalPagina = ceil($numTotal / $quantidade);
 
-<?php
-    $sqlTotal = "SELECT idCliente FROM clientes";
-    $qrTotal = mysqli_query($conexao, $sqlTotal) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
-    $numTotal = mysqli_num_rows($qrTotal);
-    $totalPagina = ceil($numTotal/$quantidade);
+  // Verifica se há mais de uma página
+  if ($totalPagina > 1) {
+    $paginaAnterior = max(1, $pagina - 1);
+    $paginaSeguinte = min($totalPagina, $pagina + 1);
 
     echo '<li class="page-item"> <a class="page-link" href="index.php?menuop=clientes&pagina=1">Primeira</a> </li>';
 
-    if ($pagina > 6) {
-        ?>
-            <li class="page-item"><a class="page-link" href="?menuop=clientes&pagina=<?php echo $pagina-1?>"> < </a> </li>
-        <?php
+    if ($pagina > 1) {
+      echo '<li class="page-item"><a class="page-link" href="?menuop=clientes&pagina=' . $paginaAnterior . '"> < </a></li>';
     }
 
-    for ($i=1; $i <= $totalPagina; $i++) { 
-        if($i >= ($pagina-5) && $i <= ($pagina+5)) {
-            if ($i == $pagina) {
-                echo "<li class='page-item active'><a class='page-link' href='#'>$i</a></li>";
-            } else {
-                echo "<li class='page-item'><a class='page-link' href='?menuop=clientes&pagina=$i'>$i</a> </li> ";
-            }
-        }
+    $primeiraPagina = max(1, $pagina - 2);
+    $ultimaPagina = min($primeiraPagina + 4, $totalPagina);
+
+    for ($i = $primeiraPagina; $i <= $ultimaPagina; $i++) {
+      if ($i == $pagina) {
+        echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '</a></li>';
+      } else {
+        echo '<li class="page-item"><a class="page-link" href="?menuop=clientes&pagina=' . $i . '">' . $i . '</a></li>';
+      }
     }
 
-    if ($pagina < $totalPagina-5) {
-        ?>
-            <li class="page-item"><a class="page-link" href="?menuop=clientes&pagina=<?php echo $pagina+1?>"> > </a> </li>
-        <?php
+    if ($pagina < $totalPagina) {
+      echo '<li class="page-item"><a class="page-link" href="?menuop=clientes&pagina=' . $paginaSeguinte . '"> > </a></li>';
     }
 
-    echo ' <li class="page-item"> <a class="page-link" href="index.php?menuop=clientes&pagina='.$totalPagina.'">Última</a> </li>';
-?>
+    echo '<li class="page-item"> <a class="page-link" href="index.php?menuop=clientes&pagina=' . $totalPagina . '">Última</a> </li>';
+  }
+  ?>
 </ul>
+
+

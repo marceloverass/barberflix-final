@@ -5,6 +5,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 70px;
     z-index: 999;
     background-color: #f4f6fb;
     padding: 0 1rem;
@@ -73,6 +74,7 @@
     overflow: auto;
     transition: transform 0.2s ease;
     transform: translateY(-100%);
+    padding-top: 100px;
   }
   
   .dropdown_menu.open {
@@ -85,11 +87,23 @@
     align-items: center;
     justify-content: center;
   }
+
+  .dropdown_menu .link {
+    text-decoration: none;
+    color: #000;
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .dropdown_menu .link:hover {
+    color: #abaeb6;
+  }
   
   .dropdown_menu .action_btn {
-    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 60px;
   }
 
   

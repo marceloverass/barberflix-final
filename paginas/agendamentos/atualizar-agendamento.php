@@ -9,6 +9,8 @@
     $horaAgendamento = mysqli_real_escape_string($conexao, $_POST['horaAgendamento']);
 
     $sql = "UPDATE agendamentos SET
+    clienteAgendamento = '{$clienteAgendamento}',
+    barbeiroAgendamento = '{$barbeiroAgendamento}',
     tituloAgendamento = '{$tituloAgendamento}',
     descricaoAgendamento = '{$descricaoAgendamento}',
     dataAgendamento = '{$dataAgendamento}',
