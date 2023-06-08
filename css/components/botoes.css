@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.botoes {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .botoes:hover {
     background-color: #202124;
     cursor: pointer;

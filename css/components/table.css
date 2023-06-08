@@ -36,3 +36,12 @@ tr:hover {
 .tabela-cad {
     margin-top: 90px;
 }
+
+@media screen and (max-width: 600px) {
+    .table {
+      overflow-x: auto;
+    }
+    .table td {
+      white-space: nowrap;
+    }
+  }
