@@ -106,6 +106,10 @@
     margin-top: 60px;
   }
 
+.link.active {
+    color: blue; /* Exemplo de estilo para o item ativo */
+  }
+
   
   @media (min-width: 992px) {
     .dropdown_menu {

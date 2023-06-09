@@ -10,6 +10,7 @@
 
 <div class="margin">
     <a class="btn btn-outline-secondary mb-2 botoes" href="index.php?menuop=cad-servico">Novo Serviço</a>
+    <a class="btn btn-outline-secondary mb-2 botoes" href="gerar-planilha-servicos.php">Baixar Relatório</a>
 </div>
 <div>
     <form action="index.php?menuop=servicos" method="POST">

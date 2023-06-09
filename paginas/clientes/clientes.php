@@ -4,6 +4,7 @@
 
 <div class="margin">
     <a class="btn btn-outline-secondary mb-2 botoes" href="index.php?menuop=cad-cliente">Novo Cliente</a>
+    <a class="btn btn-outline-secondary mb-2 botoes" href="gerar-planilha-clientes.php">Baixar Relatório</a>
 </div>
 <div>
     <form action="index.php?menuop=clientes" method="POST">

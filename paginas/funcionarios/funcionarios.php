@@ -1,5 +1,6 @@
 <div class="margin">
     <a class="btn btn-outline-secondary mb-2 botoes" href="index.php?menuop=cad-funcionario">Novo Funcionário</a>
+    <a class="btn btn-outline-secondary mb-2 botoes" href="gerar-planilha-funcionarios.php">Baixar Relatório</a>
 </div>
 <div>
     <form action="index.php?menuop=funcionarios" method="POST">
