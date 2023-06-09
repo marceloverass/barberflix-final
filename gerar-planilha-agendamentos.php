@@ -15,7 +15,7 @@ include_once("././db/conexao.php");
 <body>
 <?php
     $arquivo = 'agendamentos.xls';
-    // Crie a tabela HTML com os dados da tabela de agendamentos
+
     $html = '';
     $html .= '<table border="1">';
     $html .= '<tr>';
@@ -49,11 +49,9 @@ include_once("././db/conexao.php");
         $html .= '</tr>';
     }
 
-    // Defina o cabeçalho do arquivo Excel
     header("Content-Type: application/vnd.ms-excel");
     header("Content-Disposition: attachment; filename=\"{$arquivo}\"");
 
-    // Remova o conteúdo HTML desnecessário
     echo $html;
     exit;
 ?>

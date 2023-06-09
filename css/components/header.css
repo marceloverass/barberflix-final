@@ -9,7 +9,7 @@
     z-index: 999;
     background-color: #f4f6fb;
     padding: 0 1rem;
-    overflow: hidden; /* Adicionado */
+    overflow: hidden;
   }
   
   .navbar {
@@ -27,8 +27,8 @@
     margin-top: 5px;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    padding-bottom: 5px; /* Adicionado */
-    margin-bottom: -5px; /* Adicionado */
+    padding-bottom: 5px;
+    margin-bottom: -5px;
   }
   
   .navbar .link {
@@ -107,7 +107,8 @@
   }
 
 .link.active {
-    color: blue; /* Exemplo de estilo para o item ativo */
+    color: #abaeb6;
+    text-decoration: underline;
   }
 
   

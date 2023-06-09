@@ -46,11 +46,9 @@ include_once("././db/conexao.php");
         $html .= '</tr>';
     }
 
-    // Defina o cabeçalho do arquivo Excel
     header("Content-Type: application/vnd.ms-excel");
     header("Content-Disposition: attachment; filename=\"{$arquivo}\"");
 
-    // Remova o conteúdo HTML desnecessário
     echo $html;
     exit;
 ?>

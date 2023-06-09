@@ -43,7 +43,7 @@
     <header>
         <div class="navbar">
             <div class="logo"><img class="logo-header" src="img/logo-side-black.png" alt="Logo BarberFlix" width="190px"></div>
-                <ul class="links">
+                <ul id="navbar-links" class="links">
                         <li><a class="link" href="index.php?menuop=home">Home</a></li>
                         <li><a class="link" href="index.php?menuop=clientes">Clientes</a></li>
                         <li><a class="link" href="index.php?menuop=funcionarios">Funcionários</a></li>
@@ -159,5 +159,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="./js/validation.js"></script>
     <script src="./js/btn-toggle.js"></script>
+    <script src="./js/link-active.js"></script>
+
 </body>
 </html>
