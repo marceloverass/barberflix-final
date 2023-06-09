@@ -1,4 +1,5 @@
 <div class="margin">
+    <a class="btn btn-outline-secondary mb-5 botoes" href="index.php?menuop=servicos">Voltar</a>
     <form class="needs-validation" action="index.php?menuop=inserir-servico" method="POST" novalidate>
         <div class="row">
             <div class="col-md-6 mb-3">

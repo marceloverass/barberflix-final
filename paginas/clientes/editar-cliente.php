@@ -7,6 +7,7 @@
 ?>
 
 <div class="container">
+    <a class="btn btn-outline-secondary mb-5 botoes" href="index.php?menuop=clientes">Voltar</a>
     <form class="needs-validation" action="index.php?menuop=atualizar-cliente" method="POST" novalidate>
         <div class="row">
             <div class="mb-3 col-md-2">
