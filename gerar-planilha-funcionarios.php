@@ -28,7 +28,7 @@ include_once("././db/conexao.php");
     $html .= '<td><b>Telefone</b></td>';
     $html .= '<td><b>Sexo</b></td>';
     $html .= '<td><b>Endereço</b></td>';
-    $html .= '<td><b>dataNascFuncionario</b></td>';
+    $html .= '<td><b>Data de Nascimento</b></td>';
     $html .= '</tr>';
 
     $sql = "SELECT * FROM funcionarios";
