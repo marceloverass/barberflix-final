@@ -1,15 +1,19 @@
 <?php
     $idFuncionario = $_POST['idFuncionario'];
     $nomeFuncionario = mysqli_real_escape_string($conexao, $_POST['nomeFuncionario']);
+    $cargoFuncionario = mysqli_real_escape_string($conexao, $_POST['cargoFuncionario']);
     $emailFuncionario = mysqli_real_escape_string($conexao, $_POST['emailFuncionario']);
     $telefoneFuncionario = mysqli_real_escape_string($conexao, $_POST['telefoneFuncionario']);
+    $cpfFuncionario = mysqli_real_escape_string($conexao, $_POST['cpfFuncionario']);
     $sexoFuncionario = mysqli_real_escape_string($conexao, $_POST['sexoFuncionario']);
     $enderecoFuncionario = mysqli_real_escape_string($conexao, $_POST['enderecoFuncionario']);
     $dataNascFuncionario = mysqli_real_escape_string($conexao, $_POST['dataNascFuncionario']);
     $sql = "UPDATE funcionarios SET
     nomeFuncionario = '{$nomeFuncionario}',
+    cargoFuncionario = '{$cargoFuncionario}',
     emailFuncionario = '{$emailFuncionario}',
     telefoneFuncionario = '{$telefoneFuncionario}',
+    cpfFuncionario = '{$cpfFuncionario}',
     sexoFuncionario = '{$sexoFuncionario}',
     enderecoFuncionario = '{$enderecoFuncionario}',
     dataNascFuncionario = '{$dataNascFuncionario}'

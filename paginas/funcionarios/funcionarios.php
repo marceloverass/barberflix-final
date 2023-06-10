@@ -16,8 +16,10 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Cargo</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
+                <th>CPF</th>
                 <th>Sexo</th>
                 <th>Endereço</th>
                 <th>Data de Nasc.</th>
@@ -41,6 +43,8 @@
                 upper(nomeFuncionario) AS nomeFuncionario,
                 lower(emailFuncionario) AS emailFuncionario,
                 telefoneFuncionario,
+                cargoFuncionario,
+                cpfFuncionario,
                 upper(enderecoFuncionario) AS enderecoFuncionario,
                 CASE
                     WHEN sexoFuncionario='M' THEN 'MASCULINO'
@@ -55,8 +59,10 @@
                 WHERE
                 idFuncionario='{$txt_pesquisa}' or
                 nomeFuncionario LIKE '%{$txt_pesquisa}%' or
+                cargoFuncionario LIKE '%{$txt_pesquisa}%' or
                 emailFuncionario LIKE '%{$txt_pesquisa}%' or
                 telefoneFuncionario LIKE '%{$txt_pesquisa}%' or
+                cpfFuncionario LIKE '%{$txt_pesquisa}%' or
                 sexoFuncionario LIKE '%{$txt_pesquisa}%' or
                 enderecoFuncionario LIKE '%{$txt_pesquisa}%' or
                 dataNascFuncionario LIKE '%{$txt_pesquisa}%'
@@ -69,8 +75,10 @@
             <tr>
                 <td><?=$dados["idFuncionario"] ?></td>
                 <td><?=$dados["nomeFuncionario"] ?></td>
+                <td><?=$dados["cargoFuncionario"] ?></td>
                 <td><?=$dados["emailFuncionario"] ?></td>
                 <td><?=$dados["telefoneFuncionario"] ?></td>
+                <td><?=$dados["cpfFuncionario"] ?></td>
                 <td><?=$dados["sexoFuncionario"] ?></td>
                 <td><?=$dados["enderecoFuncionario"] ?></td>
                 <td class="text-center"><?=$dados["dataNascFuncionario"] ?></td>

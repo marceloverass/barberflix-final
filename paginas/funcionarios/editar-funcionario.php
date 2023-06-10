@@ -22,6 +22,12 @@
                 <div class="invalid-feedback">Campo obrigatório</div>
             </div>
             <div class="col-md-3 mb-3">
+                <label class="form-label" for="cargoFuncionario">Cargo</label>
+                <input class="form-control" type="text" name="cargoFuncionario" value="<?=$dados["cargoFuncionario"]?>" required>
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">Campo obrigatório</div>
+            </div>
+            <div class="col-md-3 mb-3">
                 <label class="form-label" for="emailFuncionario">E-mail</label>
                 <input class="form-control" type="email" name="emailFuncionario" value="<?=$dados["emailFuncionario"]?>" required>
                 <div class="valid-feedback">OK!</div>
@@ -30,6 +36,12 @@
             <div class="col-md-3 mb-3">
                 <label class="form-label" for="telefoneFuncionario">Telefone</label>
                 <input class="form-control" type="text" name="telefoneFuncionario" value="<?=$dados["telefoneFuncionario"]?>" required>
+                <div class="valid-feedback">OK!</div>
+                <div class="invalid-feedback">Campo obrigatório</div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label class="form-label" for="cpfFuncionario">CPF</label>
+                <input class="form-control" type="text" name="cpfFuncionario" value="<?=$dados["cpfFuncionario"]?>" required>
                 <div class="valid-feedback">OK!</div>
                 <div class="invalid-feedback">Campo obrigatório</div>
             </div>
