@@ -99,31 +99,33 @@
     $numTotal = mysqli_num_rows($qrTotal);
     $totalPagina = ceil($numTotal/$quantidade);
 
-    echo '<li class="page-item"> <a class="page-link" href="index.php?menuop=agendamentos&pagina=1">Primeira</a> </li>';
-
-    if ($pagina > 6) {
-        ?>
-            <li class="page-item"><a class="page-link" href="?menuop=agendamentos&pagina=<?php echo $pagina-1?>"> < </a> </li>
-        <?php
-    }
-
-    for ($i=1; $i <= $totalPagina; $i++) { 
-        if($i >= ($pagina-5) && $i <= ($pagina+5)) {
-            if ($i == $pagina) {
-                echo "<li class='page-item active'><a class='page-link' href='#'>$i </a></li>";
-            } else {
-                echo "<li class='page-item'><a class='page-link' href='?menuop=agendamentos&pagina=$i'>$i</a> </li> ";
-            }
+    if ($totalPagina > 1) {
+        $paginaAnterior = max(1, $pagina - 1);
+        $paginaSeguinte = min($totalPagina, $pagina + 1);
+    
+        echo '<li class="page-item"> <a class="page-link" href="index.php?menuop=agendamentos&pagina=1">Primeira</a> </li>';
+    
+        if ($pagina > 1) {
+          echo '<li class="page-item"><a class="page-link" href="?menuop=agendamentos&pagina=' . $paginaAnterior . '"> < </a></li>';
         }
-    }
-
-    if ($pagina < $totalPagina-5) {
-        ?>
-            <li class="page-item"><a class="page-link" href="?menuop=agendamentos&pagina=<?php echo $pagina+1?>"> > </a> </li>
-        <?php
-    }
-
-    echo ' <li class="page-item"> <a class="page-link" href="index.php?menuop=agendamentos&pagina='.$totalPagina.'">Última</a> </li>';
-?>
+    
+        $primeiraPagina = max(1, $pagina - 2);
+        $ultimaPagina = min($primeiraPagina + 4, $totalPagina);
+    
+        for ($i = $primeiraPagina; $i <= $ultimaPagina; $i++) {
+          if ($i == $pagina) {
+            echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '</a></li>';
+          } else {
+            echo '<li class="page-item"><a class="page-link" href="?menuop=agendamentos&pagina=' . $i . '">' . $i . '</a></li>';
+          }
+        }
+    
+        if ($pagina < $totalPagina) {
+          echo '<li class="page-item"><a class="page-link" href="?menuop=agendamentos&pagina=' . $paginaSeguinte . '"> > </a></li>';
+        }
+    
+        echo '<li class="page-item"> <a class="page-link" href="index.php?menuop=agendamentos&pagina=' . $totalPagina . '">Última</a> </li>';
+      }
+      ?>
 </ul>
 
