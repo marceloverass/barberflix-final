@@ -6,18 +6,26 @@
         $loginUser = $_SESSION['loginUser'];
         $senhaUser = $_SESSION['senhaUser'];
         $nomeUser = $_SESSION['nomeUser'];
+        $perfil = $_SESSION['perfil'];
+        
 
         $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
         $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
         $linha = mysqli_num_rows($rs);
-
+        
+        
         if ($linha == 0) {
             session_unset();
             session_destroy();
             header("Location: login.php");
             exit();
-        } 
+        } else {
+            $dados = mysqli_fetch_assoc($rs);
+            $_SESSION['perfil'] = $dados['perfil'];
+            $_SESSION['nomeUser'] = $dados['nomeUser'];
+        }
         
+
     } else {
         header("Location: login.php");
     }
@@ -93,7 +101,11 @@
                     include('paginas/clientes/excluir-cliente.php');
                     break;
                 case 'funcionarios':
-                    include('paginas/funcionarios/funcionarios.php');
+                    if ($_SESSION['perfil'] != 'proprietario') {
+                        echo "<script>alert('Você não tem permissão para acessar esta página!'); location.href='index.php?menuop=home';</script>";
+                    } else {
+                        include('paginas/funcionarios/funcionarios.php');
+                    }
                     break;
                 case 'cad-funcionario':
                     include('paginas/funcionarios/cad-funcionario.php');

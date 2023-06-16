@@ -6,16 +6,19 @@
     if( isset($_POST["loginUser"]) && isset($_POST["senhaUser"])) {
         $loginUser = mysqli_real_escape_string($conexao, $_POST["loginUser"]);
         $senhaUser = mysqli_real_escape_string($conexao, $_POST["senhaUser"]);
+        $perfil = mysqli_real_escape_string($conexao, $_POST["perfil"]);
         
         $sql = "SELECT * FROM usuarios WHERE loginUser = '{$loginUser}' AND senhaUser = '{$senhaUser}'";
         $rs = mysqli_query($conexao, $sql) or die("Erro ao executar a consulta!" . mysqli_error($conexao));
         $linha = mysqli_num_rows($rs);
-
+        
+        
         if ($linha != 0) {
             session_start();
             $_SESSION['loginUser'] = $loginUser;
             $_SESSION['senhaUser'] = $senhaUser;
             $_SESSION['nomeUser'] = $dados['nomeUser'];
+            $_SESSION['perfil'] = $perfil;
             header("Location: index.php");
         } else {
             $msg_error = "<div class='alert alert-danger' role='alert'>
